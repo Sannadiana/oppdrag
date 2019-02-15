@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/mainStyle.css">
+    <title>Flow App</title>
+</head>
+
+<body>
+
+
+    <div id="flow-app">
+        <h1>Manage your sprint</h1>
+        <h2>Backlog:</h2>
+        <div class="card-container">
+            <article class="card" v-for="(card, index) in cardList" :key="index">
+                <div class="task">Task</div>
+                <div class="card-content">
+                    <h3>{{ card.name }}</h3>
+                    <p>{{ card.task }}</p>
+                    <p> {{ card.responsable }}</p>
+                </div>
+                <img class="img" v-bind:src="card.image">
+            </article>
+        </div>
+
+        <h2>Sprint:</h2>
+
+
+        <div id="sprint-container">
+            <section id="to-do">
+                <h3>To Do</h3>
+            </section>
+            <section id="in-progress">
+                <h3>In progress</h3>
+            </section>
+            <section id="done">
+                <h3>Done</h3>
+            </section>
+
+        </div>
+
+    </div>
+    <script src="scripts/vue-development-mode.js"></script>
+    <script src="scripts/content.js"></script>
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <script src="scripts/qunit.js"></script>
+    <script src="scripts/bordInter.js"></script>
+</body>
+
+</html>
