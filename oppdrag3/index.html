@@ -16,11 +16,15 @@
         <div class="cart">
             <p>Cart({{ cart.length }})</p>
         </div>
-        <product @add-to-cart="updateCart" @remove-from-cart="removeItem"> </product>
+        <main class="product-container">
+            <product-detail v-for="(product, index) in products" v-bind="product" :cart="cart" :key="index" @add-to-cart="updateCart" @remove-from-cart="removeItem">
+            </product-detail>
+        </main>
+
 
     </div>
-    </div>
     <script src="scripts/vue-development-mode.js"></script>
+    <script src="scripts/product-detail.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 
