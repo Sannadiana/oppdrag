@@ -3,20 +3,15 @@ $(document).ready(function() {
     $("#newCard-btn").click(function() {
         $(cardInput).css("display", "inherit")
     });
-    let color = "#2196F3";
-    colorBorder();
 
-    // Render bottom border for input field
-    function colorBorder() {
-        $("input[type=text]").css("border-bottom", "2px solid" + color + "");
-    }
+
+    let color = "#2196F3";
+
 
     // Define card
-    function card(color, text) {
+    function card(text) {
         return (
-            `<div class="kanban-card d-flex flex-column" style="background-color:` +
-            color +
-            `">
+            `<div class="kanban-card">
             <p>` +
             text +
             `</p>
@@ -34,7 +29,7 @@ $(document).ready(function() {
             $(this).val("");
             $(this)
                 .next(".list-body")
-                .append(card(color, text));
+                .append(card(text));
         }
     });
 
@@ -55,4 +50,7 @@ $(document).ready(function() {
             })
             .disableSelection();
     });
+
+
+
 });
