@@ -1,0 +1,115 @@
+#sprintHeader {
+    font-size: 2rem;
+    padding: 2rem;
+    text-align: center;
+    color: gray;
+}
+
+main {
+    margin-top: 8px;
+    display: flex;
+    width: 100%;
+}
+
+#todoHeader {
+    background-color: darkblue;
+}
+
+#inProgressHeader {
+    background-color: orange;
+}
+
+#doneHeader {
+    background-color: green;
+}
+
+section {
+    width: 400px;
+    border: solid 1px gray;
+}
+
+input[type="text"] {
+    margin-top: 5px;
+    width: auto;
+    height: 30px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+button {
+    border: 0;
+    background: 0;
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+}
+
+.color-checked {
+    border: 1px solid black;
+}
+
+.colors {
+    align-items: center;
+}
+
+.color {
+    box-sizing: border-box;
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.column {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lists {
+    text-align: center;
+    display: flex;
+}
+
+.list {
+    align-self: flex-start;
+}
+
+.list>header {
+    color: white;
+}
+
+.list-body {
+    height: 50%;
+}
+
+.kanban-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-top: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+}
+
+.kanban-card>button {
+    align-self: flex-start;
+}
+
+.kanban-card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}

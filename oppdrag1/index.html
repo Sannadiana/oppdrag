@@ -5,52 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/mainStyle.css">
-    <title>Flow App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <title>Document</title>
+
+
 </head>
 
 <body>
+    <header id="sprintHeader">Manage your Sprint</header>
 
 
-    <div id="flow-app">
-        <h1>Manage your sprint</h1>
-        <h2>Backlog:</h2>
-        <div class="card-container">
-            <article class="card" v-for="(card, index) in cardList" :key="index">
-                <div class="task">Task</div>
-                <div class="card-content">
-                    <h3>{{ card.name }}</h3>
-                    <p>{{ card.task }}</p>
-                    <p> {{ card.responsable }}</p>
+
+
+    <main>
+
+        <div class="lists">
+
+
+            <section id="backLog" class="column-list">
+                <h3 id="backLogTXT">Sprint Backlog</h3>
+                <P>Write a task in the inputfield down below and press enter</P>
+                <input type="text" placeholder="Add new card">
+                <div id="sortable1" class="list-body">
+
                 </div>
-                <img class="img" v-bind:src="card.image">
-            </article>
+            </section>
+
+            <section id="to-do" class="column list">
+                <header id="todoHeader">
+                    <h3>To Do</h3>
+                </header>
+                <div id="sortable2" class="list-body"></div>
+            </section>
+
+
+            <section id="in-progress" class="column list">
+                <header id="inProgressHeader">
+                    <h3>In Progress</h3>
+                </header>
+                <div id="sortable3" class="list-body"></div>
+            </section>
+
+
+            <section id="done" class="column list">
+                <header id="doneHeader">
+                    <h3>Done</h3>
+                </header>
+                <div id="sortable4" class="list-body"></div>
+            </section>
+
+
         </div>
 
-        <h2>Sprint:</h2>
+    </main>
 
 
-        <div id="sprint-container">
-            <section class="card-stat" id="to-do">
-                <h3>To Do</h3>
-            </section>
-            <section class="card-stat" id="in-progress">
-                <h3>In progress</h3>
-            </section>
-            <section class="card-stat" id="done">
-                <h3>Done</h3>
-            </section>
 
-        </div>
 
-    </div>
-    <script src="scripts/vue-development-mode.js"></script>
-    <script src="scripts/content.js"></script>
-    <script src="scripts/jquery-3.3.1.min.js"></script>
-    <script src="scripts/jquery-ui.min.js"></script>
-    <script src="scripts/qunit.js"></script>
-    <script src="scripts/bordInter.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script/jquery-ui.js"></script>
+    <script src="script/index.js"></script>
 </body>
 
 </html>
