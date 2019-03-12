@@ -11,6 +11,10 @@ main {
     width: 100%;
 }
 
+#make-task {
+    display: none;
+}
+
 #todoHeader {
     background-color: darkblue;
 }

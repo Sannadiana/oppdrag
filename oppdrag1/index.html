@@ -24,11 +24,20 @@
 
 
             <section id="backLog" class="column-list">
-                <h3 id="backLogTXT">Sprint Backlog</h3>
-                <P>Write a task in the inputfield down below and press enter</P>
-                <input type="text" placeholder="Add new card">
-                <div id="sortable1" class="list-body">
 
+                <h3 id="backLogTXT">Sprint Backlog</h3>
+                <input id="task-btn" type="button" value="Create a task">
+
+
+
+                <div id="make-task">
+                    <button id="close-task-btn" class="fas fa-times"> </button>
+                    <P>Type in title, description and storypoints into input field</P>
+                    <input id="cardTitle" type="text" placeholder="Task title"> <br>
+                    <input id="cardDesc" type="text" placeholder="Task description"><br>
+                    <input id="cardTitle" type="text" placeholder="Task storypoints">
+                    <div id="sortable1" class="list-body">
+                    </div>
                 </div>
             </section>
 

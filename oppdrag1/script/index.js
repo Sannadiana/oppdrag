@@ -1,14 +1,28 @@
 $(document).ready(function() {
-    //Start makeing new card
-    $("#newCard-btn").click(function() {
-        $(cardInput).css("display", "inherit")
+
+    //Start makeing a task
+    $("#task-btn").click(function() {
+        $("#make-task").css("padding", "1rem")
+        $("#make-task").css("display", "inherit")
+        $("#make-task").css("background", "lightgrey")
+        $("#make-task").css("border-radius", "2rem")
     });
 
+    //Close task making
+
+    $("#close-task-btn").click(function() {
+        $("#make-task").css("display", "none")
+    })
 
     let color = "#2196F3";
 
 
+
+
     // Define card
+
+
+
     function card(text) {
         return (
             `<div class="kanban-card">
@@ -43,6 +57,7 @@ $(document).ready(function() {
     });
 
 
+
     $(function() {
         $("#sortable1, #sortable2, #sortable3,#sortable4")
             .sortable({
@@ -50,6 +65,56 @@ $(document).ready(function() {
             })
             .disableSelection();
     });
+
+    $(function() {
+        $("#to-do")
+            .droppable({
+                over: function() {
+
+                },
+                out: function() {
+
+                },
+                drop: function(event, ui) {
+                    ui.draggable
+                        .css("background-color", "darkblue")
+                        .draggable({ disabled: true });
+                }
+            });
+
+        $("#in-progress")
+            .droppable({
+                over: function() {
+
+                },
+                out: function() {
+
+                },
+                drop: function(event, ui) {
+                    ui.draggable
+                        .css("background-color", "orange")
+                        .draggable({ disabled: true });
+                }
+            });
+
+        $("#done")
+            .droppable({
+                over: function() {
+
+                },
+                out: function() {
+
+                },
+                drop: function(event, ui) {
+                    ui.draggable
+                        .css("background-color", "green")
+                        .draggable({ disabled: true });
+                }
+            });
+
+    })
+
+
 
 
 
