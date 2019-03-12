@@ -6,7 +6,6 @@ let webShopApp = new Vue({
                 productId: 1,
                 brand: "Tom Dixon",
                 product: 'Melt mini',
-                onsale: true,
                 details: ["Sockel: 27Ø", "Width: 40cm", "Hight: 40cm", "Cable length: 2M", "Materials: Steel and glass"],
                 variants: [{
                         variantId: 1,
@@ -38,7 +37,6 @@ let webShopApp = new Vue({
                 productId: 2,
                 brand: "Tom Dixon",
                 product: 'Fade',
-                onsale: true,
                 details: ["Sockel: 27Ø", "Width: 20cm", "Hight: 40cm", "Cable length: 3M", "Materials: Steel and glass"],
                 variants: [{
                         variantId: 1,
@@ -64,7 +62,6 @@ let webShopApp = new Vue({
                 productId: 3,
                 brand: "Tom Dixon",
                 product: 'Void',
-                onsale: true,
                 details: ["Sockel: 27Ø", "Width: 20cm", "Hight: 20cm", "Cable length: 3M", "Materials: Steel and glass"],
                 variants: [{
                         variantId: 1,
@@ -80,7 +77,38 @@ let webShopApp = new Vue({
                     }
                 ],
 
-            }
+            },
+            {
+                productId: 4,
+                brand: "Tom Dixon",
+                product: 'Etch',
+                details: ["Sockel: 27Ø", "Width: 20cm", "Hight: 40cm", "Cable length: 3M", "Materials: Steel and glass"],
+                variants: [{
+                        variantId: 1,
+                        variantColor: "Black",
+                        variantImage: "./images/blackEtch.jpg",
+                        variantQuanitity: 6
+                    }, {
+                        variantId: 2,
+                        variantColor: "Rose",
+                        variantImage: "./images/roseEtch.jpg",
+                        variantQuanitity: 5
+                    },
+                    {
+                        variantId: 3,
+                        variantColor: "Silver",
+                        variantImage: "./images/sileverEtch.jpg",
+                        variantQuanitity: 2
+                    },
+                    {
+                        variantId: 4,
+                        variantColor: "Gold",
+                        variantImage: "./images/goldEtch.jpg",
+                        variantQuanitity: 2
+                    }
+                ],
+
+            },
         ]
     },
 

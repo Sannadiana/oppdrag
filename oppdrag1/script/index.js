@@ -9,20 +9,13 @@ $(document).ready(function() {
     });
 
     //Close task making
-
     $("#close-task-btn").click(function() {
         $("#make-task").css("display", "none")
     })
 
-    let color = "#2196F3";
-
-
 
 
     // Define card
-
-
-
     function card(text) {
         return (
             `<div class="kanban-card">

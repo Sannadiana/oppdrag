@@ -10,9 +10,6 @@ Vue.component('product-detail', {
         <h1>{{ title }}</h1>
         <p v-if="inStock">{{ variantStock }} in stock</p>
         <p v-else="!inStock">Out of stock</p>
-        <!-Sette et bilde som indikerer salg->
-        <span v-if="onsale">30% Discount</span>
-
         <ul>
             <li v-for="detail in details">{{ detail }}</li>
         </ul>
