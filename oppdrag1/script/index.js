@@ -16,11 +16,11 @@ $(document).ready(function() {
 
 
     // Define card
-    function card(text) {
+    function card(title) {
         return (
             `<div class="kanban-card">
             <p>` +
-            text +
+            title +
             `</p>
             <button>
               <i class="fas fa-times"></i>
@@ -32,13 +32,30 @@ $(document).ready(function() {
     // Add new card
     $("input[type=text]").keypress(function(event) {
         if (event.which === 13) {
-            let text = $(this).val();
-            $(this).val("");
-            $(this)
-                .next(".list-body")
-                .append(card(text));
+            let title = $("#cardTitle").val();
+            let desc = $("#cardDesc").val();
+            let points = $("#cardSp").val();
+
+            let htmlText = `
+            <div class="kanban-card">
+            <p>${title}</p>
+            <p>${desc}</p>
+            <p>${points}</p>
+            <button>
+              <i class="fas fa-times"></i>
+            </button>
+            </div>
+            `;
+
+            /* $(this)
+            .next(".list-body")
+            .append(card(text)); */
+            $("#sortable1").append(htmlText);
+            $("#cardTitle, #cardDesc, #cardSp").val("");
         }
     });
+
+
 
     // Delete card
     $(document).on("click", ".kanban-card > button", function() {
