@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+    //Hide creat task inputs
+    $("#make-task").css("display", "none")
+
     //Start makeing a task
     $("#task-btn").click(function() {
         $("#make-task").css("padding", "1rem")
@@ -13,48 +16,32 @@ $(document).ready(function() {
         $("#make-task").css("display", "none")
     })
 
+    //Add new card 
+    /**Ønsker å sjekke variablene om de er tom,
+     *  så gi beskjed tul brukeren om å fylle inn hvor det mangler innhold */
+    $("#addTask-btn").on("click", function() {
 
+        let title = $("#cardTitle").val();
+        let desc = $("#cardDesc").val();
+        let points = $("#cardSp").val();
 
-    // Define card
-    function card(title) {
-        return (
-            `<div class="kanban-card">
-            <p>` +
-            title +
-            `</p>
-            <button>
-              <i class="fas fa-times"></i>
-            </button>
-        </div>`
-        );
-    }
-
-    // Add new card
-    $("input[type=text]").keypress(function(event) {
-        if (event.which === 13) {
-            let title = $("#cardTitle").val();
-            let desc = $("#cardDesc").val();
-            let points = $("#cardSp").val();
-
-            let htmlText = `
+        let htmlText = `
             <div class="kanban-card">
-            <p>${title}</p>
-            <p>${desc}</p>
+            <div id="card-content">
+            <h1>${title}</h1> 
+            <p id="card-desc">${desc}</p> 
             <p>${points}</p>
+            </div>
             <button>
               <i class="fas fa-times"></i>
             </button>
             </div>
             `;
+        $("#sortable1").append(htmlText);
+        $("#cardTitle, #cardDesc, #cardSp").val("");
+        $("#card-content").css("width", "100%");
 
-            /* $(this)
-            .next(".list-body")
-            .append(card(text)); */
-            $("#sortable1").append(htmlText);
-            $("#cardTitle, #cardDesc, #cardSp").val("");
-        }
     });
-
 
 
     // Delete card
@@ -66,8 +53,7 @@ $(document).ready(function() {
             });
     });
 
-
-
+    // Sort cards into sections 
     $(function() {
         $("#sortable1, #sortable2, #sortable3,#sortable4")
             .sortable({
@@ -76,30 +62,21 @@ $(document).ready(function() {
             .disableSelection();
     });
 
+
+    // Drag and Drop cards ino sections
     $(function() {
         $("#to-do")
             .droppable({
-                over: function() {
-
-                },
-                out: function() {
-
-                },
                 drop: function(event, ui) {
                     ui.draggable
                         .css("background-color", "darkblue")
                         .draggable({ disabled: true });
+                    $("#to-do").css("color", "white")
                 }
             });
 
         $("#in-progress")
             .droppable({
-                over: function() {
-
-                },
-                out: function() {
-
-                },
                 drop: function(event, ui) {
                     ui.draggable
                         .css("background-color", "orange")
@@ -109,18 +86,14 @@ $(document).ready(function() {
 
         $("#done")
             .droppable({
-                over: function() {
-
-                },
-                out: function() {
-
-                },
                 drop: function(event, ui) {
                     ui.draggable
                         .css("background-color", "green")
                         .draggable({ disabled: true });
                 }
             });
+
+
 
     })
 
