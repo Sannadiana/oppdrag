@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <!--
 Du må lage administratorgrensesnittet for en svært kritisk militær webapplikasjon. 
 Webapplikasjonen skal nemlig brukes av generaler til å gi ordre til militært personale som er i feltet. 
@@ -13,15 +10,70 @@ Husk å oppgi kandidatnummer på din besvarelse, ikke studentnummer.
 Du bestemmer selv omfanget av Vue vs. omfanget av JQuery, men begge deler skal være med på en eller annen måte; 
 trenger ikke kombineres, kan være på forskjellige deler av nettsiden.-->
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Militær App</title>
 </head>
 
 <body>
 
+    <div id="admin-app">
+
+        <header id="header">
+            <h1>Administrer ordrer</h1>
+        </header>
+
+        <main>
+
+            <div id="content">
+                <article>
+                    <ul>
+                        <li>Tittel</li>
+                        <li>Beskrivelse</li>
+                        <li>Dato</li>
+                        <li>Lokasjon</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div id="main-content">
+                <form id="make-order">
+                    <label>Tittel</label>
+                    <input type="text">
+
+                    <label>Beskrivelse</label>
+                    <input type="text">
+
+                    <label>Dato</label>
+                    <input type="text">
+
+                    <div id="lokasjon">Lokasjon
+                        <input type="text">
+                        <ul>
+                            <li>USA</li>
+                            <li>Afganistan</li>
+                        </ul>
+                    </div>
+                </form>
+                <input type="button" value="Slett">
+                <input type="button" value="Endre">
+                <input type="button" value="Send ordre">
+            </div>
+
+
+        </main>
+
+    </div>
+
 </body>
+
+
+
 
 </html>
