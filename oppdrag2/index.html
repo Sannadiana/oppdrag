@@ -17,62 +17,34 @@ trenger ikke kombineres, kan være på forskjellige deler av nettsiden.-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
     <title>Militær App</title>
 </head>
 
 <body>
 
-    <div id="admin-app">
+    <div>
 
-        <header id="header">
+        <header>
             <h1>Administrer ordrer</h1>
         </header>
 
-        <main>
-
-            <div id="content">
-                <article>
-                    <ul>
-                        <li>Tittel</li>
-                        <li>Beskrivelse</li>
-                        <li>Dato</li>
-                        <li>Lokasjon</li>
-                    </ul>
-                </article>
+        <main id="admin-view">
+            <make-order v-on:new-order="onNewOrderCreated"></make-order>
+            <div class="orders-list">
+                <order v-for="(order, index) in orders" v-bind:key="index" v-bind:title="order.title"></order>
             </div>
-
-            <div id="main-content">
-                <form id="make-order">
-                    <label>Tittel</label>
-                    <input type="text">
-
-                    <label>Beskrivelse</label>
-                    <input type="text">
-
-                    <label>Dato</label>
-                    <input type="text">
-
-                    <div id="lokasjon">Lokasjon
-                        <input type="text">
-                        <ul>
-                            <li>USA</li>
-                            <li>Afganistan</li>
-                        </ul>
-                    </div>
-                </form>
-                <input type="button" value="Slett">
-                <input type="button" value="Endre">
-                <input type="button" value="Send ordre">
-            </div>
-
-
         </main>
 
+        <footer>
+            <h1>Blablabla</h1>
+        </footer>
+
     </div>
-
+    <script src="scripts/components/order.js"></script>
+    <script src="scripts/components/makeOrder.js"></script>
+    <script src="scripts/components/adminView.js"></script>
 </body>
-
 
 
 
