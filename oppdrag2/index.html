@@ -16,8 +16,13 @@ trenger ikke kombineres, kan være på forskjellige deler av nettsiden.-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+
     <title>Militær App</title>
 </head>
 
@@ -32,7 +37,7 @@ trenger ikke kombineres, kan være på forskjellige deler av nettsiden.-->
         <main id="admin-view">
             <make-order v-on:new-order="onNewOrderCreated"></make-order>
             <div class="orders-list">
-                <order v-for="(order, index) in orders" v-bind:key="index" v-bind:title="order.title"></order>
+                <order v-for="(order, index) in orders" v-bind:key="index" v-bind:title="order.title" v-bind:desc="order.desc" v-bind:date="order.date" v-bind:location="order.location"> </order>
             </div>
         </main>
 
@@ -41,9 +46,11 @@ trenger ikke kombineres, kan være på forskjellige deler av nettsiden.-->
         </footer>
 
     </div>
+
     <script src="scripts/components/order.js"></script>
     <script src="scripts/components/makeOrder.js"></script>
     <script src="scripts/components/adminView.js"></script>
+    <script src="scripts/qunit/functions.js"></script>
 </body>
 
 
