@@ -1,11 +1,9 @@
 Vue.component('product-detail', {
     template: `
     <div class="product">
-
     <div class="product-image">
         <img v-bind:src="image" alt="">
     </div>
-
     <div class="product-info">
         <h1>{{ title }}</h1>
         <p v-if="inStock">{{ variantStock }} in stock</p>
@@ -13,13 +11,11 @@ Vue.component('product-detail', {
         <ul>
             <li v-for="detail in details">{{ detail }}</li>
         </ul>
-
         <!--"{ backgroundImage: { url(image) }"-->
         <div class="variant-container">
             <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box" :style="{ backgroundImage: 'url(' + variant.variantImage + ')'}" v-on:mouseover="updateProduct(index)"></div>
         </div>
     </div>
-
     <button v-on:click="addToCart" :disabled="!inStock" :class="{disabledButton: !inStock}">Add to cart</button>
     <button @click="removeFromCart">Remove from cart</button>
 </div>

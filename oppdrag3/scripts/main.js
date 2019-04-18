@@ -1,4 +1,3 @@
-/**Jeg ønsker å kunne klikke på handlekurgen å få frem produktene som er i den */
 let webShopApp = new Vue({
     el: '#shop-app',
     data: {

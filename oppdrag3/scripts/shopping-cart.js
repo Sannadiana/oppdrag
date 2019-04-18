@@ -21,7 +21,7 @@ Vue.component('shopping-cart', {
                 .filter(product => product.variants.length > 0)
         }
     },
-    template: `<div>
+    template: `<div class="cart-content">
         <ul>
             <li v-for="product in productsInCart">
                 {{product.product}}
