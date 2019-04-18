@@ -11,7 +11,7 @@ let webShopApp = new Vue({
                         variantId: 1,
                         variantColor: "Gold",
                         variantImage: "./images/goldL.jpg",
-                        variantQuanitity: 10
+                        variantQuanitity: 0
                     }, {
                         variantId: 2,
                         variantColor: "Silver",

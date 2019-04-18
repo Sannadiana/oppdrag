@@ -13,7 +13,7 @@ Vue.component('product-detail', {
         </ul>
         <!--"{ backgroundImage: { url(image) }"-->
         <div class="variant-container">
-            <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box" :style="{ backgroundImage: 'url(' + variant.variantImage + ')'}" v-on:mouseover="updateProduct(index)"></div>
+            <div v-for="(variant, index) in variants" :key="variant.variantId" class="color-box" :style="{ backgroundImage: 'url(' + variant.variantImage + ')'}" v-on:click="updateProduct(index)"></div>
         </div>
     </div>
     <button v-on:click="addToCart" :disabled="!inStock" :class="{disabledButton: !inStock}">Add to cart</button>

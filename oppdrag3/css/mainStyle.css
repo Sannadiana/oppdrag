@@ -56,6 +56,10 @@ img {
     width: 50%;
 }
 
+.product-info p {
+    color: orange;
+}
+
 .color-box {
     width: 100px;
     height: 100px;
