@@ -17,8 +17,6 @@ $(document).ready(function() {
     })
 
     //Add new card 
-    /**Ønsker å sjekke variablene om de er tom,
-     *  så gi beskjed tul brukeren om å fylle inn hvor det mangler innhold */
     $("#addTask-btn").on("click", function() {
 
         let title = $("#cardTitle").val();

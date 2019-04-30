@@ -1,12 +1,10 @@
 Vue.component('order', {
     name: 'Order',
     template: `<div class="order-box">
-        <h1>{{ title }}</h1>
+        <h1 id="title">{{ title }}</h1>
         <p>{{ desc }} </p>
         <p>{{ date }} </p>
-        <p>{{ location }} </p>
-        <button><i class="fas fa-map-marker-alt"></i></button>
-        <img src="./images/afganistan.png"/>
+        <img v-bind:src="renderPicture(location)" />
     </div>
     `,
     props: {
@@ -19,9 +17,19 @@ Vue.component('order', {
         renderPicture(location) {
             switch (location) {
                 case "Afganistan":
-                    return "./images/afganistan.png"
+                    return "./images/banner/afganistan.png"
+                    break;
+                case "Amerikas forente stater":
+                    return "./images/banner/usa.jpg"
+                    break;
+                case "Russland":
+                    return "./images/banner/russland.jpg"
+                    break;
+                case "Syria":
+                    return "./images/banner/syria.png"
+                    break;
+
             }
-            console.log("Sanna is awesome")
         }
     }
 })

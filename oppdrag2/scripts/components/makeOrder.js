@@ -1,12 +1,18 @@
+//Component for making an order 
 Vue.component('make-order', {
     name: 'MakeOrder',
     template: `<div>
         <form id="make-order">
-            <label>Tittel</label>
-            <input type="text" v-model="title">
 
+            <label>Title</label>
+            <select type="text" v-model="title">
+                <option value="Bakke Angrep">Bakke Angrep</option>
+                <option value="Cyber Angrep">Cyber Angrep</option>
+                <option value="Luft Angrep">Luft Angrep</option>
+            </select>     
+            
             <label>Beskrivelse</label>
-            <input type="text" v-model="desc">          
+            <input type="text" v-model="desc">
 
             <label>Dato</label>
             <input type="text" autocomplete="off" id="datepicker" v-model="date">
@@ -22,7 +28,6 @@ Vue.component('make-order', {
             
         
         </form>
-        <input type="button" value="Slett">
         <input type="button" value="Send ordre" v-on:click="submitOrder">
     </div>
     `,
