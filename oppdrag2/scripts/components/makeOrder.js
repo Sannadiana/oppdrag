@@ -1,4 +1,5 @@
 //Component for making an order 
+
 Vue.component('make-order', {
     name: 'MakeOrder',
     template: `<div>
@@ -47,6 +48,7 @@ Vue.component('make-order', {
                 date: this.date,
                 location: this.location
             }
+
             this.$emit('new-order', orderData)
             this.title = ""
             this.desc = ""
