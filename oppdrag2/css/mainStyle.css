@@ -13,7 +13,6 @@
 #admin-view {
     padding: 3rem;
     background-color: darkolivegreen;
-    border-radius: 2rem;
     text-align: center;
 }
 
@@ -27,11 +26,40 @@
     margin: 2rem;
 }
 
-body {
-    background-color: white;
-}
-
 .order-box img {
     height: 10%;
     width: 10%;
+}
+
+body {
+    background-color: white;
+    border: solid black;
+}
+
+#solider-app {
+    text-align: center;
+    background-color: olivedrab;
+    padding: 1rem;
+}
+
+.solider-list {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.solider {
+    padding: 2rem;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color: darkolivegreen;
+    border-radius: 5rem;
+}
+
+.solider img {
+    height: 100px;
+    width: 100px;
+    border-radius: 3rem;
 }
