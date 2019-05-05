@@ -20,8 +20,10 @@
 
     <div>
 
-        <header>
-            <h1>Administrer ordrer</h1>
+        <header id="header-content">
+            <img src="images/soldier/offiser.jpg">
+            <h1>Administrer dine ordrer sir!</h1>
+            <img src="images/soldier/offiser.jpg">
         </header>
 
         <main id="admin-view">
@@ -29,11 +31,14 @@
             <div class="orders-list">
                 <order v-for="(order, index) in orders" v-bind:key="index" v-bind:title="order.title" v-bind:desc="order.desc" v-bind:date="order.date" v-bind:location="order.location"> </order>
             </div>
-
-
         </main>
 
-        <footer>
+
+        <footer id="solider-app">
+            <h1>Soldater tilgjengelig for ordre</h1>
+            <div class="solider-list">
+                <solider-detail v-for="(solider, index) in soliders" v-bind="solider"> </solider-detail>
+            </div>
 
         </footer>
 
@@ -43,6 +48,9 @@
     <script src="scripts/components/makeOrder.js"></script>
     <script src="scripts/components/adminView.js"></script>
     <script src="scripts/qunit/functions.js"></script>
+    <script src="scripts/vue-development-mode.js"></script>
+    <script src="scripts/solider-detail.js"></script>
+    <script src="scripts/solider.js"></script>
 </body>
 
 
